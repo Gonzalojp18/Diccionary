@@ -1,0 +1,36 @@
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: aliceblue;
+    max-width:100%;
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+main{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80vh;
+}
+
+input{
+    inset:unset;
+    height: 5vh;
+    width: 100%;
+}
+
+button{
+    width: 50%;
+    padding: 1%;
+    margin-top: 10px;
+}
+
+
