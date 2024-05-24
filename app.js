@@ -28,7 +28,5 @@ form.addEventListener('keydown', (e) => {
 
 const inValue = () =>{
     word = document.getElementById('word').value;
-    console.log("este es la palabra desde el metodo invalue " + word)
     localStorage.setItem('word', word);
-    localStorage.getItem('word');
 }

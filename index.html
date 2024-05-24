@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <title>WOAPP</title>
-<!-- DOM
+    <!-- DOM
 Document Object Model
 Es una interfaz de programacion para documentos html & xml
 Respresenta la pagina de manera que los programas puedan cambiar la estructura del documento, estilo y contenid.
 Este proporciona una representacion del documento, como un grupo estructurado de nodos y objetos que tienen propiedas y metodos.
 Este nos permite y especificamente a js modificar el contenido de la pagina we de una manera dinamica-->
 </head>
+
 <body>
     <header>
-        <h1>Word of the day</h1>
+        <nav class="header">
+            <h1>RememberMe App</h1>
+        </nav>
+        <section id="mainMenu">
+            <div class="mainText">
+                <h3> Our app is designed to help you remember and review the new English words you learn every day.</h3>
+                <button class="start">Start</button>
+            </div>
+            <img src="./source/undraw_reminders_re_gtyb (2).svg" alt="">
+        </section>
     </header>
     <main>
-        <form id="form" action="/submit">
-            <input type="text" id="word" name="word" placeholder="Add new Word">
-            <button id="boton" type="submit">Add</button>
-        </form>
-        <ul id="fieldWord"></ul>
+        <section id="mainContent">
+            <h2>Word of the day</h2>
+            <form id="form" action="/submit">
+                <input type="text" id="word" name="word" placeholder="Add new Word">
+                <button id="boton" type="submit">Add</button>
+            </form>
+            <ul id="fieldWord"></ul>
+        </section>
     </main>
 
     <script src="./app.js"></script>
 </body>
+
 </html>
