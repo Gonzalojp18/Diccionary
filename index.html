@@ -29,16 +29,21 @@ Este nos permite y especificamente a js modificar el contenido de la pagina we d
     </header>
     <main>
         <section id="mainContent">
-            <h2>Word of the day</h2>
+            <h2>RememberMe App</h2>
+            <h3>Word of the day</h3>
             <form id="form" action="/submit">
                 <input type="text" id="word" name="word" placeholder="Add new Word">
                 <button id="boton" type="submit">Add</button>
+                <!-- <button id="save">Save</button> -->
             </form>
             <ul id="fieldWord"></ul>
+            <section
+            class="saveWords">Soy la section</section>
         </section>
     </main>
 
     <script src="./app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 
 </html>

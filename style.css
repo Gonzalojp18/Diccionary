@@ -12,6 +12,7 @@ header{
     height: 100%;
     max-width:100%;
     margin: auto;
+    visibility:hidden;
 }
 
 .header{
@@ -69,7 +70,7 @@ main{
 }
 
 #mainContent{
-    visibility:hidden;
+    visibility: visible;
 }
 
 input{
@@ -84,4 +85,9 @@ ul{
     background-color: aquamarine;
 }
 
+.saveWords{
+    background-color: lightblue;
+    width: 50%;
+    height: 50%;
+}
 

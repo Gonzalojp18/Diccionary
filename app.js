@@ -6,9 +6,12 @@ let word = document.getElementById('word');
 const takeValue = () =>{
     word = document.getElementById('word').value;
     const li = document.createElement('li');
-    li.innerHTML = `<li>${word}</li>`;
+    li.innerHTML = `
+                    <p>${word}</p>
+                    `;
     const fieldWork = document.getElementById('fieldWord');
     fieldWork.appendChild(li);
+
 }
 
 form.addEventListener('submit',(e) => {
@@ -30,3 +33,26 @@ const inValue = () =>{
     word = document.getElementById('word').value;
     localStorage.setItem('word', word);
 }
+
+
+// Save word like one favorite word
+const saveWord = () => {
+    const listWord = localStorage.getItem('word');
+    console.log(listWord)
+    const newWord = document.createElement('div');
+    console.log(newWord);
+    newWord.innerHTML = `<p>${listWord}</p>`;
+    const favoriteWord = document.querySelector('.saveWords')
+    favoriteWord.appendChild(newWord);
+}
+
+saveWord();
+
+
+
+// const btnSave = document.getElementById('save');
+// btnSave.addEventListener('click', (e) =>{
+//     e.preventDefault();
+//     saveWord();
+// })
+
