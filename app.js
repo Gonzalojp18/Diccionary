@@ -5,12 +5,18 @@ let word = document.getElementById('word');
 //Here get the input value and that way can get the value using anothe event
 const takeValue = () =>{
     word = document.getElementById('word').value;
-    const li = document.createElement('li');
-    li.innerHTML = `
-                    <p>${word}</p>
+    const card = document.createElement('div');
+    card.innerHTML = `
+                    <div class="card bg-warning d-flex flex-column rounded-1 p-5">
+                        <h5>${word}</h5>
+                        <div class="d-flex w-100 justify-content-between ">
+                        <button id="save" class="mt-5">Add to Favorite</button>
+                        <button class="mt-5">Delete</button>
+                        </div>
+                    </div>
                     `;
     const fieldWork = document.getElementById('fieldWord');
-    fieldWork.appendChild(li);
+    fieldWork.appendChild(card);
 
 }
 
@@ -34,25 +40,24 @@ const inValue = () =>{
     localStorage.setItem('word', word);
 }
 
+const btnSave = document.getElementById('save');
+btnSave.addEventListener('click', (e) =>{
+    e.preventDefault();
+    console.log(btnSave);
+    saveWord();
+})
+
 
 // Save word like one favorite word
-const saveWord = () => {
-    const listWord = localStorage.getItem('word');
-    console.log(listWord)
-    const newWord = document.createElement('div');
-    console.log(newWord);
-    newWord.innerHTML = `<p>${listWord}</p>`;
-    const favoriteWord = document.querySelector('.saveWords')
-    favoriteWord.appendChild(newWord);
-}
-
-saveWord();
+// const saveWord = () => {
+//     const listWord = localStorage.getItem('word');
+//     console.log(listWord)
+//     const newWord = document.createElement('div');
+//     console.log(newWord);
+//     newWord.innerHTML = `<p>${listWord}</p>`;
+//     const favoriteWord = document.querySelector('.saveWords')
+//     favoriteWord.appendChild(newWord);
+// }
 
 
-
-// const btnSave = document.getElementById('save');
-// btnSave.addEventListener('click', (e) =>{
-//     e.preventDefault();
-//     saveWord();
-// })
 
