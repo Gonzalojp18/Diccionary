@@ -8,16 +8,14 @@ const takeValue = () =>{
     const card = document.createElement('div');
     card.innerHTML = `
                     <div class="card bg-warning d-flex flex-column rounded-1 p-5">
-                        <p class=fs-3>${word}</p>
+                        <p class="fs-2">${word}</p>
                         <div class="d-flex w-100 justify-content-between ">
                         <button id="save" class="mt-5 btn btn-warning">Add to Favorite</button>
                         <button class="mt-5 btn btn-dark">Delete</button>
                         </div>
-                    </div>
                     `;
     const fieldWork = document.getElementById('fieldWord');
     fieldWork.appendChild(card);
-
 }
 
 form.addEventListener('submit',(e) => {
