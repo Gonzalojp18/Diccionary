@@ -9,11 +9,11 @@ const takeValue = () =>{
     card.style.height = '25vh';
     card.style.width = "20vw";
     card.innerHTML = `
-                    <div class="card bg-warning d-flex flex-column rounded-1 p-5">
-                        <p class="fs-2">${word}</p>
-                        <div class="d-flex w-100 justify-content-between ">
-                        <button id="save" class="mt-5 btn btn-warning">Add to Favorite</button>
-                        <button class="mt-5 btn btn-dark">Delete</button>
+                    <div class="card d-flex flex-column rounded-1 p-5">
+                            <p class="fs-2 favoriteWord">${word}</p>
+                        <div class="d-flex justify-content-between ">
+                            <button id="save" class="mt-5 btn btn-warning">Add to Favorite</button>
+                            <button class="mt-5 btn btn-dark">Delete</button>
                         </div>
                     `;
     const fieldWork = document.getElementById('fieldWord');
@@ -43,8 +43,8 @@ const inValue = () =>{
 const btnSave = document.getElementById('save');
 btnSave.addEventListener('click', (e) =>{
     e.preventDefault();
-    console.log(btnSave);
-    saveWord();
+    const btnFavorite = document.querySelector('favoriteWord');
+    console.log(btnFavorite);
 })
 
 
