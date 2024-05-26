@@ -7,17 +7,18 @@ const takeValue = () =>{
     word = document.getElementById('word').value;
     const card = document.createElement('div');
     card.innerHTML = `
-                    <div class="card bg-warning d-flex flex-column rounded-1 p-5">
-                        <h5>${word}</h5>
-                        <div class="d-flex w-100 justify-content-between ">
-                        <button id="save" class="mt-5">Add to Favorite</button>
-                        <button class="mt-5">Delete</button>
+                        <div class="container card w-100 h-100 g-2">
+                            <div class="card-body">
+                                <h5>${word}</h5>
+                            </div>
+                            <div class="d-flex">
+                                <button>add</button>
+                                <button>Delete</button>
+                            </div>
                         </div>
-                    </div>
                     `;
     const fieldWork = document.getElementById('fieldWord');
     fieldWork.appendChild(card);
-
 }
 
 form.addEventListener('submit',(e) => {
