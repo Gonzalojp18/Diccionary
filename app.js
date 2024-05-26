@@ -8,10 +8,10 @@ const takeValue = () =>{
     const card = document.createElement('div');
     card.innerHTML = `
                     <div class="card bg-warning d-flex flex-column rounded-1 p-5">
-                        <h5>${word}</h5>
+                        <p class=fs-3>${word}</p>
                         <div class="d-flex w-100 justify-content-between ">
-                        <button id="save" class="mt-5">Add to Favorite</button>
-                        <button class="mt-5">Delete</button>
+                        <button id="save" class="mt-5 btn btn-warning">Add to Favorite</button>
+                        <button class="mt-5 btn btn-dark">Delete</button>
                         </div>
                     </div>
                     `;
