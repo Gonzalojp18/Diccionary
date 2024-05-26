@@ -14,7 +14,7 @@ header{
     height: 100%;
     max-width:100%;
     margin: auto;
-    display: none;
+    visibility: visible;
 }
 .header{
     display: flex;
@@ -63,6 +63,7 @@ h1{
 #mainMenu img{
     margin-top: 6%;
 }
+
 
 
 /*STYLE OF MAIN SECTION */
@@ -131,9 +132,11 @@ main{
 
 
 #fieldWord{
-    gap: 5%;
+    gap: 1%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 5%
+    padding: 1%
 }
+
 

@@ -1,0 +1,194 @@
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    header{
+        height: 100%;
+        max-width:100%;
+        margin: auto;
+        visibility: visible;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    h1{
+        color: #f2b90e;
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    #mainMenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 5% 2rem 0 1rem;
+    }
+    
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 95%;
+        margin: 3% 0 0 5%;
+    }
+    
+    .start{
+        width: 60%;
+        margin: 5% auto 5% auto;
+    }
+    
+    #mainMenu h3 {
+        color: #404348;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: 1px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.5rem;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    #mainMenu img{
+        margin: 10% auto 10% auto;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px)  {}
+@media only screen and (min-width: 1024px) and (max-width: 1380px) {
+    header{
+        height: 100%;
+        max-width:100%;
+        margin: auto;
+        visibility: visible;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    h1{
+        color: #f2b90e;
+        font-size: 2rem;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    #mainMenu{
+        display: flex;
+        margin: auto;
+        width: 100%;
+        padding: 0 1rem 0 1rem;
+    }
+    
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        margin: 0 0 0 5%;
+    }
+    
+    .start{
+        width: 20%;
+        margin-top: 5%;
+    }
+    
+    #mainMenu h3 {
+        color: #404348;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        font-size: 2.5rem;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    #mainMenu img{
+        margin-top: 6%;
+        width: 35%;
+    }
+/* 
+    SECTION MAIN */
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #mainContent{
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5% 0 0 0 ;
+    }
+    #mainContent h3 {
+        color: #404348;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: normal;
+        font-weight: bold;
+        line-height: normal;
+        text-align: left;
+        font-size: 3.5rem;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    #form{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #boton{
+        margin: 4% 0 4% 0;
+    }
+    
+    #word{
+        resize: both;
+        min-height: 15vh;
+        max-height: 20vh;
+        min-width: 30vw;
+    }
+    
+    .tableWords{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 90vw;
+        min-height: 70vh;
+        border-radius: 1rem;
+    }
+    
+    .tableWords h5{
+        padding: 1rem;
+        color: #404348;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: normal;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 2rem;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    
+    #fieldWord{
+        gap: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5%
+    }
+    
+}
+@media only screen and (min-width: 1380px) and (max-width: 1950px) {}
+

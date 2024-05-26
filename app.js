@@ -6,14 +6,15 @@ let word = document.getElementById('word');
 const takeValue = () =>{
     word = document.getElementById('word').value;
     const card = document.createElement('div');
+    card.style.height = '25vh';
+    card.style.width = "20vw";
+    card.style.backgroundColor = "red";
     card.innerHTML = `
-                        <div class="container card w-100 h-100 g-2">
-                            <div class="card-body">
-                                <h5>${word}</h5>
-                            </div>
-                            <div class="d-flex">
-                                <button>add</button>
-                                <button>Delete</button>
+                        <div>
+                                <p class="fs-3">${word}</p>
+                            <div class="mt-5">
+                                <button class="btn-warning">Favorite</button>
+                                <button class="btn-dark">Delete</button>
                             </div>
                         </div>
                     `;
