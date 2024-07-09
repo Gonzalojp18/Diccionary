@@ -2,6 +2,7 @@ const form = document.getElementById('form');
 let wordInput = document.getElementById('word');
 
 //
+// Función asíncrona para obtener la palabra de la API junto con datos adicionales
 const fetchWordFromAPI = async (word) => {
     const APIurl = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
     const url = `${APIurl}${word}`;
@@ -21,29 +22,22 @@ const fetchWordFromAPI = async (word) => {
         console.log(data);
         const { word, phonetic, phonetics, meanings } = data[0];
         const captureIPA = phonetic || 'N/A';
-        const capturePartOfSpeech = meanings[0].partOfSpeech || 'N/A';
-        const captureSounds = data[0].phonetics.forEach(element => {
-                console.log(element.audio != "");
-
-            });
+        const captureSounds = phonetics.find(p => p.audio && p.audio.trim())?.audio || '';
         const captureMeaning = meanings[0].definitions[0].definition || 'N/A';
-        const captureSynonyms = meanings[0].synonyms || [];
-        const captureAntonyms = meanings[0].antonyms || [];
 
         return {
             word,
             captureIPA,
             captureSounds,
             captureMeaning,
-            captureSynonyms,
-            captureAntonyms,
-            capturePartOfSpeech,
         };
     } catch (error) {
         console.error('Error fetching data:', error);
+        return null;
     }
 }
 
+// Función para manejar el valor de entrada y almacenar en localStorage
 const getValue = async () => {
     const word = wordInput.value;
     const fetchedData = await fetchWordFromAPI(word);
@@ -55,6 +49,7 @@ const getValue = async () => {
     }
 }
 
+// Función para crear y mostrar la tarjeta con la palabra y los datos adicionales
 const takeValue = (data) => {
     const { word, captureIPA, captureSounds, captureMeaning } = data;
     const card = document.createElement('div');
@@ -64,24 +59,43 @@ const takeValue = (data) => {
         <div class="card d-flex flex-column rounded-1 g-2" data-order="1">
             <p class="w-100 p-2 favoriteWord">${word}</p>
             <p class="w-100 p-2 phoneticText">${captureIPA}</p>
-            ${captureSounds ? `<audio controls src="${captureSounds}" class="w-100 p-2"></audio>` : ''}
+            ${captureSounds ? `<audio controls src="${captureSounds}" class="w-100 p-2"></audio>` : '<p>No audio available</p>'}
             <p class="definitions p-2">${captureMeaning}</p>
             <button class="mt-5 btn btn-dark" onclick="deleteWord(this)">Delete</button>
         </div>`;
+    
         form.appendChild(card);
 }
 
+// Función para eliminar una palabra
+const deleteWord = (button) => {
+    const card = button.parentElement.parentElement;
+    const word = card.querySelector('.favoriteWord').innerText;
+    let listFavoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || [];
+    listFavoriteWords = listFavoriteWords.filter(favoriteWord => favoriteWord.word !== word);
+    localStorage.setItem('favoriteWords', JSON.stringify(listFavoriteWords));
+    card.remove();
+}
+
+// Event listener para el submit del formulario
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     getValue();
 });
 
+// Event listener para la tecla Enter en el formulario
 form.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
         getValue();
     }
 });
+
+
+
+
+
+
 
 // Mostrar las palabras al cargar la página
 document.addEventListener('DOMContentLoaded', fetchWordFromAPI);
