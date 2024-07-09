@@ -22,13 +22,10 @@ const fetchWordFromAPI = async (word) => {
         const { word, phonetic, phonetics, meanings } = data[0];
         const captureIPA = phonetic || 'N/A';
         const capturePartOfSpeech = meanings[0].partOfSpeech || 'N/A';
-        const captureSounds = data.forEach(element => {
-            element.phonetics.filter(element => {
-                const audio = element.audio != "";
-                return audio;
-            })
-            
-        });
+        const captureSounds = data[0].phonetics.forEach(element => {
+                console.log(element.audio != "");
+
+            });
         const captureMeaning = meanings[0].definitions[0].definition || 'N/A';
         const captureSynonyms = meanings[0].synonyms || [];
         const captureAntonyms = meanings[0].antonyms || [];
@@ -54,7 +51,6 @@ const getValue = async () => {
         let listFavoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || [];
         listFavoriteWords.push(fetchedData);
         localStorage.setItem('favoriteWords', JSON.stringify(listFavoriteWords));
-        console.log(listFavoriteWords);
         takeValue(fetchedData);
     }
 }
