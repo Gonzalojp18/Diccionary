@@ -62,9 +62,25 @@ const takeValue = (data) => {
             ${captureSounds ? `<audio controls src="${captureSounds}" class="w-100 p-2"></audio>` : '<p>No audio available</p>'}
             <p class="definitions p-2">${captureMeaning}</p>
             <button class="mt-5 btn btn-dark" onclick="deleteWord(this)">Delete</button>
+            <button class="mt-2 btn btn-primary" onclick="addFavorite('${word}')">Add to Favorites</button>
         </div>`;
-    
         form.appendChild(card);
+}
+
+// Función para agregar una palabra a favoritos
+const addFavorite = (word) => {
+    let favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || [];
+    if (!favoriteWords.some(favWord => favWord.word === word)) {
+        const wordData = favoriteWords.find(favWord => favWord.word === word);
+        if (wordData) {
+            let favoriteList = JSON.parse(localStorage.getItem('favorites')) || [];
+            favoriteList.push(wordData);
+            localStorage.setItem('favorites', JSON.stringify(favoriteList));
+            showNotification(`${word} added to favorites.`);
+        }
+    } else {
+        showNotification(`${word} is already in favorites.`);
+    }
 }
 
 // Función para eliminar una palabra
@@ -77,10 +93,15 @@ const deleteWord = (button) => {
     card.remove();
 }
 
+const clearInput = () => {
+    wordInput.value = '';
+}
+
 // Event listener para el submit del formulario
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     getValue();
+    clearInput();
 });
 
 // Event listener para la tecla Enter en el formulario
@@ -88,13 +109,9 @@ form.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
         getValue();
+        clearInput();
     }
 });
-
-
-
-
-
 
 
 // Mostrar las palabras al cargar la página
