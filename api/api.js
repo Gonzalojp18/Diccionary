@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const cardWord = document.getElementById('cardWords');
 let wordInput = document.getElementById('word');
 
 //
@@ -53,18 +53,26 @@ const getValue = async () => {
 const takeValue = (data) => {
     const { word, captureIPA, captureSounds, captureMeaning } = data;
     const card = document.createElement('div');
-    card.style.height = 'auto';
-    card.style.width = "20vw";
     card.innerHTML = `
-        <div class="card d-flex flex-column rounded-1 g-2" data-order="1">
-            <p class="w-100 p-2 favoriteWord">${word}</p>
-            <p class="w-100 p-2 phoneticText">${captureIPA}</p>
-            ${captureSounds ? `<audio controls src="${captureSounds}" class="w-100 p-2"></audio>` : '<p>No audio available</p>'}
-            <p class="definitions p-2">${captureMeaning}</p>
-            <button class="mt-5 btn btn-dark" onclick="deleteWord(this)">Delete</button>
-            <button class="mt-2 btn btn-primary" onclick="addFavorite('${word}')">Add to Favorites</button>
-        </div>`;
-        form.appendChild(card);
+    <div class="cardWords">
+        <div class="cardText">
+            <h4>${word}</h4>
+                <div class="fonetic">
+                    <p>${captureIPA}</p>
+                        ${captureSounds ? `
+                        <button class="audio-button" onclick="playAudio('${captureSounds}')">
+                        <i class='bx bx-play-circle' ></i>
+                        </button>
+                        ` : '<p>No audio available</p>'}
+                </div>
+                <p class="definitions">${captureMeaning}</p>
+        </div>
+        <div class="iconAction" >
+                <button class="btn" onclick="deleteWord(this)"><box-icon name='star' type='solid' ><i class='bx bxl-star' ></i></box-icon></button>
+                <button class="btn" onclick="addFavorite('${word}')"><box-icon name='trash' type='solid' ><i class='bx bxl-trash'></i></box-icon></button>
+        </div>
+    </div>`;
+        cardWord.appendChild(card);
 }
 
 // Función para agregar una palabra a favoritos
@@ -95,6 +103,12 @@ const deleteWord = (button) => {
 
 const clearInput = () => {
     wordInput.value = '';
+}
+
+// Función para reproducir el audio
+const playAudio = (src) => {
+    const audio = new Audio(src);
+    audio.play();
 }
 
 // Event listener para el submit del formulario

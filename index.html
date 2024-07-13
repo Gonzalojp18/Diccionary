@@ -12,13 +12,13 @@
     <!-- or -->
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="./querys.css">
-    <link rel="stylesheet" href="./styleSVG.css">
+    <link rel="stylesheet" href="./styles/querys.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>WOAPP</title>
 </head>
 
 <body>
-    <header id="home" class="section">
+    <!-- <header id="home" class="section">
         <nav class="header">
             <h1>RmmberMe App</h1>
         </nav>
@@ -29,10 +29,10 @@
                 <button id="startButton" class="start btb btn-warning" >Start</button>
             </div>
         </section>
-    </header>
+    </header> -->
     <main id="mainContent" class="section">
         <section class="appWord">
-            <h3>Word of the day</h3>
+            <h3 class="mainTitle">Word of the day</h3>
             <section class="dataForm">
             <form id="form" action="/submit">
                 <input type="text" id="word" id="floatingInput" class="form-control form-control" name="word" placeholder="Add new Word">
@@ -41,17 +41,13 @@
         </section>
         <section class="tableWords">
             <article id="fieldWord">
-                <div class="cardWords">
-                    <div>
+                <div id="cardWords">
+                    <!-- <div>
                     <h5>Words</h5>
                     <p>phonetic</p>
                     <p>audio</p>
                     <p>descripcion</p>
-                </div>
-                    <div class="iconAction">
-                        <box-icon name='star' type='solid' ><i class='bx bxl-star' ></i></box-icon>
-                        <box-icon name='trash' type='solid' ><i class='bx bxl-trash' ></i></box-icon>
-                    </div>
+                </div> -->
                 </div>
             </article>
         </section>

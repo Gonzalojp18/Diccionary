@@ -8,6 +8,14 @@ body{
     background-color: #ebe4e4;
 }
 
+button{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 769px) and (max-width: 1024px)  {}
 
 .hidden {
@@ -71,7 +79,6 @@ h1{
     font-family: Montserrat, sans-serif;
     letter-spacing: normal;
     line-height: normal;
-    text-align: left;
     font-size: 3.5rem;
     -webkit-font-smoothing: antialiased;
 }
@@ -92,7 +99,7 @@ h1{
     margin: 1% 0 0 0 ;
 }
 
-#mainContent h3 {
+/* .mainTitle {
     color: #042456;
     font-family: Montserrat, sans-serif;
     letter-spacing: normal;
@@ -102,7 +109,7 @@ h1{
     font-size: 3.5rem;
     margin: auto;
     -webkit-font-smoothing: antialiased;
-}
+} */
 
 #form{
     margin: auto;
@@ -114,11 +121,7 @@ h1{
 
 #boton{
     margin: 3% 0 3% 0;
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+
 }
 
 

@@ -64,7 +64,7 @@
         letter-spacing: 1px;
         font-weight: 500;
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: auto;
         width: 95%;
         -webkit-font-smoothing: antialiased;
@@ -85,7 +85,7 @@
     width: 100%;
 }
 
-#mainContent h3 {
+.mainTitle {
     font-family: Montserrat, sans-serif;
     letter-spacing: normal;
     font-weight: bold;
@@ -108,18 +108,9 @@
     margin: auto;
 }
 
-#boton{
-    margin: 5% 0 3% 0;
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
 #word{
-    max-height: 20vh;
-    width: 80vw;
+    max-height: 40vh;
+    width: 90vw;
 }
 
 .tableWords{
@@ -131,29 +122,38 @@
 
 .cardWords{
     min-width: 90vw;
-    margin: 0 auto 0 auto;
-    height: 50%;
-    padding: 1rem;
+    margin: .3rem auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: #aaadb0;
-    border-radius: 5%;
+    border-radius: 5px;
+    text-transform: capitalize;
 }
 
 #fieldWord{
-    gap: 1%;
     display: flex;
     flex-wrap: wrap;
-    padding: 1%
+    margin: 1rem;
 }
 
 .iconAction{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 20%;
-    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cardText{
+    padding: 1rem;
+}
+
+.fonetic{
+    display: flex;
+    align-items: center;
+}
+
+.fonetic .audio-button{
+    margin: 0 0 .1rem 1.5rem;
 }
 
 }
