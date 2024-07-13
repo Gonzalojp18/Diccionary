@@ -2,24 +2,6 @@
 const form = document.getElementById('form');
 let wordInput = document.getElementById('word');
 
-<<<<<<< HEAD
-//Here get the input value and that way can get the value using anothe event
-const takeValue = () =>{
-    word = document.getElementById('word').value;
-    const card = document.createElement('div');
-    card.style.height = '25vh';
-    card.style.width = "20vw";
-    card.innerHTML = `
-                    <div class="d-flex flex-column rounded-1 ">
-                        <p class="fs-2">${word}</p>
-                        <div class="d-flex w-100 justify-content-between ">
-                        <button id="save" class=" btn btn-warning">Add to Favorite</button>
-                        <button class=" btn btn-dark">Delete</button>
-                        </div>
-                    `;
-    const fieldWork = document.getElementById('fieldWord');
-    fieldWork.appendChild(card);
-=======
 // Función asíncrona para obtener la palabra de la API junto con datos adicionales
 const fetchWordFromAPI = async (word) => {
     const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
@@ -51,8 +33,8 @@ const fetchWordFromAPI = async (word) => {
         console.error('Fetch error: ', error);
         return null;
     }
->>>>>>> siriusBack
 }
+
 
 // Función para manejar el valor de entrada y almacenar en localStorage
 const inValue = async () => {
@@ -114,7 +96,6 @@ form.addEventListener('keydown', (e) => {
     }
 });
 
-<<<<<<< HEAD
 
 // const inValue = () =>{
 //     word = document.getElementById('word').value;
@@ -142,7 +123,5 @@ form.addEventListener('keydown', (e) => {
 
 
 
-=======
 // Mostrar las palabras al cargar la página
 document.addEventListener('DOMContentLoaded', inValue);
->>>>>>> siriusBack
