@@ -35,6 +35,7 @@ const fetchWordFromAPI = async (word) => {
     }
 }
 
+
 // Función para manejar el valor de entrada y almacenar en localStorage
 const inValue = async () => {
     const word = wordInput.value;
@@ -94,6 +95,33 @@ form.addEventListener('keydown', (e) => {
         inValue();
     }
 });
+
+
+// const inValue = () =>{
+//     word = document.getElementById('word').value;
+//     localStorage.setItem('word', word);
+// }
+
+// const btnSave = document.getElementById('save');
+// btnSave.addEventListener('click', (e) =>{
+//     e.preventDefault();
+//     console.log(btnSave);
+//     saveWord();
+// })
+
+
+// Save word like one favorite word
+// const saveWord = () => {
+//     const listWord = localStorage.getItem('word');
+//     console.log(listWord)
+//     const newWord = document.createElement('div');
+//     console.log(newWord);
+//     newWord.innerHTML = `<p>${listWord}</p>`;
+//     const favoriteWord = document.querySelector('.saveWords')
+//     favoriteWord.appendChild(newWord);
+// }
+
+
 
 // Mostrar las palabras al cargar la página
 document.addEventListener('DOMContentLoaded', inValue);
