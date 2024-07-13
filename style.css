@@ -144,11 +144,10 @@ h1{
 }
 
 #fieldWord{
-    gap: 1%;
     display: flex;
     flex-wrap: wrap;
-    padding: 1%
 }
+<<<<<<< HEAD
 W
 .iconAction{
     display: flex;
@@ -159,3 +158,5 @@ W
 } */
 
 
+=======
+>>>>>>> siriusBack
