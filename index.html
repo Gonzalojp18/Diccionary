@@ -6,46 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- BOXICONS -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="./querys.css">
     <link rel="stylesheet" href="./styleSVG.css">
     <title>WOAPP</title>
 </head>
 
 <body>
-    <header>
+    <header id="home" class="section">
         <nav class="header">
-            <h1>RememberMe App</h1>
+            <h1>RmmberMe App</h1>
         </nav>
         <section id="mainMenu">
+            <img src="./source/undraw_reminders_re_gtyb (2).svg" alt="">
             <div class="mainText">
                 <h3> Our app is designed to help you remember and review the new English words you learn every day.</h3>
-                <button class="start">Start</button>
+                <button id="startButton" class="start btb btn-warning" >Start</button>
             </div>
-            <img src="./source/undraw_reminders_re_gtyb (2).svg" alt="">
         </section>
     </header>
-    <main>
-        <section id="mainContent">
-            <!-- <h2>RememberMe App</h2> -->
+    <main id="mainContent" class="section">
+        <section class="appWord">
             <h3>Word of the day</h3>
             <section class="dataForm">
             <form id="form" action="/submit">
-                <input type="text" id="word" id="floatingInput" class="form-control" name="word" placeholder="Add new Word">
-                <button id="boton" class="btn btn-warning" type="submit">Add</button>
-                <!-- <button id="save">Save</button> -->
+                <input type="text" id="word" id="floatingInput" class="form-control form-control" name="word" placeholder="Add new Word">
+                <button id="boton" type="submit"> <box-icon type='solid' name='message-square-add'><i  class='bx bxl-message-square-add'></i></box-icon></button>
             </form>
         </section>
         <section class="tableWords">
-            <h5>List of Words</h5>
-            <div id="fieldWord"></div>
+            <article id="fieldWord">
+                <div class="cardWords">
+                    <div>
+                    <h5>Words</h5>
+                    <p>phonetic</p>
+                    <p>audio</p>
+                    <p>descripcion</p>
+                </div>
+                    <div class="iconAction">
+                        <box-icon name='star' type='solid' ><i class='bx bxl-star' ></i></box-icon>
+                        <box-icon name='trash' type='solid' ><i class='bx bxl-trash' ></i></box-icon>
+                    </div>
+                </div>
+            </article>
         </section>
-            <section
-            class="saveWords">Soy la section</section>
+            <!-- <section
+            class="saveWords">Soy la section</section> -->
 
         </section>
     </main>
 
     <script src="./app.js"></script>
+    <script src="./source/startApp.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

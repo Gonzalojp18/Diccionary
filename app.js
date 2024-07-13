@@ -9,11 +9,11 @@ const takeValue = () =>{
     card.style.height = '25vh';
     card.style.width = "20vw";
     card.innerHTML = `
-                    <div class="card bg-warning d-flex flex-column rounded-1 p-5">
+                    <div class="d-flex flex-column rounded-1 ">
                         <p class="fs-2">${word}</p>
                         <div class="d-flex w-100 justify-content-between ">
-                        <button id="save" class="mt-5 btn btn-warning">Add to Favorite</button>
-                        <button class="mt-5 btn btn-dark">Delete</button>
+                        <button id="save" class=" btn btn-warning">Add to Favorite</button>
+                        <button class=" btn btn-dark">Delete</button>
                         </div>
                     `;
     const fieldWork = document.getElementById('fieldWord');
@@ -35,17 +35,17 @@ form.addEventListener('keydown', (e) => {
 });
 
 
-const inValue = () =>{
-    word = document.getElementById('word').value;
-    localStorage.setItem('word', word);
-}
+// const inValue = () =>{
+//     word = document.getElementById('word').value;
+//     localStorage.setItem('word', word);
+// }
 
-const btnSave = document.getElementById('save');
-btnSave.addEventListener('click', (e) =>{
-    e.preventDefault();
-    console.log(btnSave);
-    saveWord();
-})
+// const btnSave = document.getElementById('save');
+// btnSave.addEventListener('click', (e) =>{
+//     e.preventDefault();
+//     console.log(btnSave);
+//     saveWord();
+// })
 
 
 // Save word like one favorite word

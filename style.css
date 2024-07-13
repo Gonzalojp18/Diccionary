@@ -8,6 +8,22 @@ body{
     background-color: #ebe4e4;
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1024px)  {}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* #mainContent {
+    opacity: 0;
+} */
+
 /*STYLE OF HEADER SECTION */
 
 header{
@@ -67,11 +83,6 @@ h1{
 
 
 /*STYLE OF MAIN SECTION */
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 #mainContent{
     visibility: visible;
@@ -82,18 +93,20 @@ main{
 }
 
 #mainContent h3 {
-    color: #404348;
+    color: #042456;
     font-family: Montserrat, sans-serif;
     letter-spacing: normal;
     font-weight: bold;
     line-height: normal;
     text-align: left;
     font-size: 3.5rem;
+    margin: auto;
     -webkit-font-smoothing: antialiased;
 }
 
 #form{
     margin: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,42 +114,48 @@ main{
 
 #boton{
     margin: 3% 0 3% 0;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
-#word{
-    resize: vertical;
-    min-height: 10vh;
-    max-height: 20vh;
-    min-width: 30vw;
-}
 
-.tableWords{
+/* .tableWords{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 5rem;
     min-width: 90vw;
     min-height: 70vh;
     border-radius: 1rem;
 }
 
-.tableWords h5{
+.cardWords{
+    min-width: 50vw;
+    margin: 0 auto 0 auto;
+    height: 60%;
     padding: 1rem;
-    color: #404348;
-    font-family: Montserrat, sans-serif;
-    letter-spacing: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 2rem;
-    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #aaadb0;
+    border-radius: 1rem;
 }
-
 
 #fieldWord{
     gap: 1%;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     padding: 1%
 }
+W
+.iconAction{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    background-color: #f2b90e;
+} */
 
 
