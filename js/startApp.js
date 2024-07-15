@@ -1,15 +1,19 @@
 let button = document.getElementById('startButton');
 const homeSection = document.getElementById('home');
 const mainContent = document.getElementById('mainContent');
+const back = document.getElementById('back');
 
-button.addEventListener('click', function() {
-
-    // Animate out the home section
+const showMainContent = () => {
     homeSection.classList.add('hidden');
-    mainContent.classList.add('visible');
+    mainContent.classList.remove('hidden');
+    mainContent.classList.add('none')
+}
 
-    // After the transition, make the main content visible
-    setTimeout(() => {
-        mainContent.classList.remove('hidden');
-    }, 500); // Match this duration to the CSS transition duration
-});
+const backHome = () => {
+    homeSection.classList.remove('hidden');
+    mainContent.classList.remove('none');
+    mainContent.classList.add('hidden');
+}
+
+button.addEventListener('click', showMainContent);
+back.addEventListener('click', backHome);

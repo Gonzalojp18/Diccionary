@@ -4,6 +4,10 @@ html * {
     box-sizing: border-box;
 }
 
+/*
+#f5689c
+#f2dc00 */
+
 body{
     background-color: #ebe4e4;
 }
@@ -16,21 +20,24 @@ button{
     cursor: pointer;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px)  {}
+/* @media only screen and (min-width: 769px) and (max-width: 1024px)  {} */
 
 .hidden {
     opacity: 0;
-    pointer-events: none;
-    position: absolute;
 }
 
 .visible {
     opacity: 1;
 }
 
-/* #mainContent {
-    opacity: 0;
-} */
+    .sectionHome{
+        position: absolute;
+    }
+
+    .sectionMain{
+        position: static;
+    }
+
 
 /*STYLE OF HEADER SECTION */
 
@@ -38,7 +45,6 @@ header{
     height: 100%;
     max-width:100%;
     margin: auto;
-    visibility: visible;
 }
 .header{
     display: flex;
@@ -46,15 +52,6 @@ header{
     padding: 2rem;
 }
 
-h1{
-    color: #f2b90e;
-    font-size: 2.5rem;
-    font-family: Montserrat, sans-serif;
-    letter-spacing: normal;
-    line-height: normal;
-    text-align: left;
-    -webkit-font-smoothing: antialiased;
-}
 
 #mainMenu{
     display: flex;
@@ -66,25 +63,14 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
 }
 
-.start{
-    width: 20%;
-    margin-top: 5%;
-}
-
-#mainMenu h3 {
+.mainText h5 {
     color: #404348;
     font-family: Montserrat, sans-serif;
     letter-spacing: normal;
     line-height: normal;
-    font-size: 3.5rem;
     -webkit-font-smoothing: antialiased;
-}
-
-#mainMenu img{
-    margin-top: 6%;
 }
 
 

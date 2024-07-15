@@ -1,7 +1,7 @@
 const cardWord = document.getElementById('cardWords');
 let wordInput = document.getElementById('word');
+const notification = document.getElementById('notification');
 
-//
 // Función asíncrona para obtener la palabra de la API junto con datos adicionales
 const fetchWordFromAPI = async (word) => {
     const APIurl = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
@@ -20,6 +20,7 @@ const fetchWordFromAPI = async (word) => {
 
         const data = await response.json();
         console.log(data);
+
         const { word, phonetic, phonetics, meanings } = data[0];
         const captureIPA = phonetic || 'N/A';
         const captureSounds = phonetics.find(p => p.audio && p.audio.trim())?.audio || '';
@@ -33,13 +34,24 @@ const fetchWordFromAPI = async (word) => {
         };
     } catch (error) {
         console.error('Error fetching data:', error);
+        if (error.message === 'Network response was not ok') {
+            showNotification('Word not found. Please check the spelling and try again.');
+        } else {
+            showNotification('An error occurred. Please try again later.');
+        }
         return null;
     }
 }
 
+
+
 // Función para manejar el valor de entrada y almacenar en localStorage
 const getValue = async () => {
-    const word = wordInput.value;
+    word = wordInput.value;
+    if (!word) {
+        showNotification('Please enter a word.');
+        return;
+    }
     const fetchedData = await fetchWordFromAPI(word);
     if (fetchedData) {
         let listFavoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || [];
@@ -49,11 +61,20 @@ const getValue = async () => {
     }
 }
 
+// Función para mostrar notificaciones al usuario
+const showNotification = (message) => {
+    notification.innerHTML = message;
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000); // Ocultar la notificación después de 3 segundos
+}
+
 // Función para crear y mostrar la tarjeta con la palabra y los datos adicionales
 const takeValue = (data) => {
     const { word, captureIPA, captureSounds, captureMeaning } = data;
-    const card = document.createElement('div');
-    card.innerHTML = `
+    const showCard = document.createElement('div');
+    showCard.innerHTML = `
     <div class="cardWords">
         <div class="cardText">
             <h4>${word}</h4>
@@ -68,11 +89,11 @@ const takeValue = (data) => {
                 <p class="definitions">${captureMeaning}</p>
         </div>
         <div class="iconAction" >
-                <button class="btn" onclick="deleteWord(this)"><box-icon name='star' type='solid' ><i class='bx bxl-star' ></i></box-icon></button>
-                <button class="btn" onclick="addFavorite('${word}')"><box-icon name='trash' type='solid' ><i class='bx bxl-trash'></i></box-icon></button>
+                <button class="btn" onclick="addFavorite('${word}')"><box-icon name='star' type='solid' ><i class='bx bxl-star' ></i></box-icon></button>
+                <button class="btn" onclick="deleteWord(this)"><box-icon name='trash' type='solid' ><i class='bx bxl-trash'></i></box-icon></button>
         </div>
     </div>`;
-        cardWord.appendChild(card);
+        cardWord.appendChild(showCard);
 }
 
 // Función para agregar una palabra a favoritos
@@ -91,18 +112,17 @@ const addFavorite = (word) => {
     }
 }
 
-// Función para eliminar una palabra
 const deleteWord = (button) => {
-    const card = button.parentElement.parentElement;
-    const word = card.querySelector('.favoriteWord').innerText;
-    let listFavoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || [];
-    listFavoriteWords = listFavoriteWords.filter(favoriteWord => favoriteWord.word !== word);
-    localStorage.setItem('favoriteWords', JSON.stringify(listFavoriteWords));
-    card.remove();
+    const card = button.closest('.cardWords');
+    if (card) {
+        card.remove();
+    } else {
+        console.error('Element with class .cardWords not found');
+    }
 }
 
 const clearInput = () => {
-    wordInput.value = '';
+    wordInput.value = ' ';
 }
 
 // Función para reproducir el audio
@@ -129,4 +149,4 @@ form.addEventListener('keydown', (e) => {
 
 
 // Mostrar las palabras al cargar la página
-document.addEventListener('DOMContentLoaded', fetchWordFromAPI);
+document.addEventListener('DOMContentLoaded', getValue);
