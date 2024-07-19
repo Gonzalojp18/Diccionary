@@ -2,22 +2,19 @@ const cardWord = document.getElementById('cardWords');
 let wordInput = document.getElementById('word');
 const notification = document.getElementById('notification');
 
-// Función asíncrona para obtener la palabra de la API junto con datos adicionales
+// Here get and capture information since my API
 const fetchWordFromAPI = async (word) => {
     const APIurl = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
     const url = `${APIurl}${word}`;
-
     try {
         const response = await fetch(url, {
             headers: {
                 'Accept': 'application/json'
             }
         });
-
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-
         const data = await response.json();
         console.log(data);
 
@@ -25,7 +22,6 @@ const fetchWordFromAPI = async (word) => {
         const captureIPA = phonetic || 'N/A';
         const captureSounds = phonetics.find(p => p.audio && p.audio.trim())?.audio || '';
         const captureMeaning = meanings[0].definitions[0].definition || 'N/A';
-
         return {
             word,
             captureIPA,
@@ -43,9 +39,7 @@ const fetchWordFromAPI = async (word) => {
     }
 }
 
-
-
-// Función para manejar el valor de entrada y almacenar en localStorage
+// And here get the word and save in the localStorage
 const getValue = async () => {
     word = wordInput.value;
     if (!word) {
@@ -61,7 +55,7 @@ const getValue = async () => {
     }
 }
 
-// Función para mostrar notificaciones al usuario
+// Show different notificacion if the users does enter word
 const showNotification = (message) => {
     notification.innerHTML = message;
     notification.style.display = 'block';
@@ -70,7 +64,7 @@ const showNotification = (message) => {
     }, 3000); // Ocultar la notificación después de 3 segundos
 }
 
-// Función para crear y mostrar la tarjeta con la palabra y los datos adicionales
+// once time the users enter the word show on the browser adding in node element of my DOM
 const takeValue = (data) => {
     const { word, captureIPA, captureSounds, captureMeaning } = data;
     const showCard = document.createElement('div');
@@ -89,14 +83,14 @@ const takeValue = (data) => {
                 <p class="definitions">${captureMeaning}</p>
         </div>
         <div class="iconAction" >
-                <button class="btn" onclick="addFavorite('${word}')"><box-icon color="#d4b205" name='star' type='regular' ><i class='bx bxl-star' ></i></box-icon></button>
-                <button class="btn" onclick="deleteWord(this)"><box-icon color="#d4b205" name='trash' type='regular' ><i class='bx bxl-trash'></i></box-icon></button>
+                <button class="btn"><box-icon onclick="addFavorite('${word}')" color="#d4b205" name='star' type='regular' ><i class='bx bxl-star' ></i></box-icon></button>
+                <button class="btn"><box-icon onclick="deleteWord(this)"  color="#d4b205" name='trash' type='regular' ><i class='bx bxl-trash'></i></box-icon></button>
         </div>
     </div>`;
         cardWord.appendChild(showCard);
 }
 
-// Función para agregar una palabra a favoritos
+// If the user want to save the word as an favorite section
 const addFavorite = (word) => {
     let favoriteWords = JSON.parse(localStorage.getItem('favoriteWords')) || [];
     if (!favoriteWords.some(favWord => favWord.word === word)) {
@@ -112,8 +106,9 @@ const addFavorite = (word) => {
     }
 }
 
+//If the users want to delete the word
 const deleteWord = (button) => {
-    const card = button.closest('.cardWords');
+    const card = button.closest('.showCard');
     if (card) {
         card.remove();
     } else {
@@ -121,11 +116,12 @@ const deleteWord = (button) => {
     }
 }
 
+//Clear the input after to enter an word
 const clearInput = () => {
     wordInput.value = ' ';
 }
 
-// Función para reproducir el audio
+// Here instantiate the audio object. Which allows me to manipulate my phonetic property.
 const playAudio = (src) => {
     const audio = new Audio(src);
     audio.play();
@@ -148,5 +144,5 @@ form.addEventListener('keydown', (e) => {
 });
 
 
-// Mostrar las palabras al cargar la página
+// show the main function after to load the DOM
 document.addEventListener('DOMContentLoaded', getValue);
