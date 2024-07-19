@@ -6,6 +6,13 @@
         margin: auto;
     }
 
+    #home{
+        height:100vh;
+        background: #e4cd05;
+        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
+        background: linear-gradient(to right, #ffffff, #e4cd05);
+    }
+
     .header{
         display: flex;
         padding: .5rem;
