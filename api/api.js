@@ -75,9 +75,9 @@ const takeValue = (data) => {
     const { word, captureIPA, captureSounds, captureMeaning } = data;
     const showCard = document.createElement('div');
     showCard.innerHTML = `
-    <div class="cardWords">
+    <div class="showCard">
         <div class="cardText">
-            <h4>${word}</h4>
+            <h3>${word}</h3>
                 <div class="fonetic">
                     <p>${captureIPA}</p>
                         ${captureSounds ? `
@@ -89,8 +89,8 @@ const takeValue = (data) => {
                 <p class="definitions">${captureMeaning}</p>
         </div>
         <div class="iconAction" >
-                <button class="btn" onclick="addFavorite('${word}')"><box-icon name='star' type='solid' ><i class='bx bxl-star' ></i></box-icon></button>
-                <button class="btn" onclick="deleteWord(this)"><box-icon name='trash' type='solid' ><i class='bx bxl-trash'></i></box-icon></button>
+                <button class="btn" onclick="addFavorite('${word}')"><box-icon color="#d4b205" name='star' type='regular' ><i class='bx bxl-star' ></i></box-icon></button>
+                <button class="btn" onclick="deleteWord(this)"><box-icon color="#d4b205" name='trash' type='regular' ><i class='bx bxl-trash'></i></box-icon></button>
         </div>
     </div>`;
         cardWord.appendChild(showCard);

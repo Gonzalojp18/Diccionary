@@ -21,35 +21,14 @@ button{
 }
 
 /* @media only screen and (min-width: 769px) and (max-width: 1024px)  {} */
-
-.hidden {
-    opacity: 0;
-}
-
-.visible {
-    opacity: 1;
-}
-
-    .sectionHome{
-        position: absolute;
-    }
-
-    .sectionMain{
-        position: static;
-    }
+/*
 
 
 /*STYLE OF HEADER SECTION */
 
 header{
-    height: 100%;
-    max-width:100%;
+    width:100%;
     margin: auto;
-}
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
 }
 
 
@@ -73,42 +52,14 @@ header{
     -webkit-font-smoothing: antialiased;
 }
 
-
-
 /*STYLE OF MAIN SECTION */
 
 #mainContent{
-    visibility: visible;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 1% 0 0 0 ;
 }
 
-/* .mainTitle {
-    color: #042456;
-    font-family: Montserrat, sans-serif;
-    letter-spacing: normal;
-    font-weight: bold;
-    line-height: normal;
-    text-align: left;
-    font-size: 3.5rem;
-    margin: auto;
-    -webkit-font-smoothing: antialiased;
-} */
 
-#form{
-    margin: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#boton{
-    margin: 3% 0 3% 0;
-
-}
 
 
 /* .tableWords{
