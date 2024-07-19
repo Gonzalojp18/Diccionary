@@ -4,9 +4,6 @@
         height: 100vh;
         width:100%;
         margin: auto;
-        background: #e4cd05;
-        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
-        background: linear-gradient(to right, #ffffff, #e4cd05);
     }
 
     .header{
@@ -20,6 +17,7 @@
         align-items: center;
         width: 100%;
         padding: 1% auto 0 auto;
+        margin: auto;
     }
 
     .mainText{
@@ -198,6 +196,14 @@ STYLE OF FOOTER */
         background: linear-gradient(to right, #ffffff, #e4cd05);
 
     }
+
+    #home{
+        height:100vh;
+        background: #e4cd05;
+        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
+        background: linear-gradient(to right, #ffffff, #e4cd05);
+    }
+
     .header{
         display: flex;
         justify-content: space-between;
@@ -213,6 +219,8 @@ STYLE OF FOOTER */
 
     .mainText{
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 60%;
         font-family: "Roboto", sans-serif;
         font-weight: 200;
@@ -257,6 +265,7 @@ STYLE OF FOOTER */
     #mainContent{
         display: flex;
         justify-content:center;
+        flex-direction: column;
 
     }
 
@@ -316,10 +325,20 @@ STYLE OF FOOTER */
         font-family: "Roboto", sans-serif;
         font-weight: 100;
         font-size: 1rem;
+        line-height: 1.5;
         -webkit-font-smoothing: antialiased;
         color: #1c1d1e;;
         background: rgb(106, 104, 104, 20%);
 
+    }
+
+    .fonetic{
+        display: flex;
+        align-items: center;
+    }
+
+    .fonetic .audio-button{
+        margin: 0 0 .1rem 1.5rem;
     }
 
     #fieldWord{
@@ -329,16 +348,181 @@ STYLE OF FOOTER */
     }
 
     .footer{
-        width: 40%;
-        border-radius: 20px;
+        width: 100%;
+        border-radius: 1px 1px 0 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        align-items: center;
         background-color: #171818;
-        height: 5vh;
-        position: absolute;
-        left: 30%;
-        bottom: 0%;
+        height: 6vh;
+    }
+
+    footer{
+        background: -webkit-linear-gradient(to left, #6a6868, #E6DADA);
+        background: linear-gradient(to left, #6a6868, #E6DADA);
     }
 }
-@media only screen and (min-width: 1380px) and (max-width: 1950px) {}
+@media only screen and (min-width: 1380px) and (max-width: 1950px) {
+    header{
+        max-width:100%;
+        margin: auto;
+        background: #e4cd05;
+        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
+        background: linear-gradient(to right, #ffffff, #e4cd05);
+
+    }
+
+    #home{
+        height:100vh;
+        background: #e4cd05;
+        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
+        background: linear-gradient(to right, #ffffff, #e4cd05);
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    #mainMenu{
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 3% 3% 0 0;
+        width: 80%;
+    }
+
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 3em;
+        margin: 10rem 8% 0 0;
+    }
+
+    .start{
+        width: 20%;
+        margin-top: 6%;
+        &:hover{
+            background: #e4cd05;
+            background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
+            background: linear-gradient(to right, #ffffff, #e4cd05);
+        }
+    }
+
+    #mainMenu img{
+        margin-top: 6%;
+        width: 30%;
+    }
+/*
+    SECTION MAIN */
+
+    main{
+        display: flex;
+        background: #E6DADA;
+        background: -webkit-linear-gradient(to left, #555353, #f2f0f0);
+        background: linear-gradient(to left, #555353, #f2f0f0);
+    }
+    #mainContent{
+        display: flex;
+        justify-content:center;
+        flex-direction: column;
+    }
+
+    .appWord{
+        padding: .2rem;
+        min-height: 85vh;
+        color: #404348;
+        font-family: "Roboto", sans-serif;
+        line-height: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .mainTitle{
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: 8px;
+    }
+
+    #form{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0 0 0 ;
+    }
+
+    #boton{
+        margin: .5rem 0 0 0;
+    }
+
+    #word{
+        font-size: 1.5rem;
+        resize: both;
+        min-height: 5vh;
+        width: 25vw;
+        text-transform: capitalize;
+    }
+
+    #cardWords{
+        display: grid;
+        gap: 1rem;
+        grid-template-rows: repeat(2, 30%);
+        grid-template-columns: repeat(3, 30%);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .showCard{
+        width: 20vw;
+        padding: .8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 8px;
+        text-transform: capitalize;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        color: #37383a;;
+        background: rgba(139, 134, 134, 60%);
+    }
+
+    .fonetic{
+        display: flex;
+        align-items: center;
+    }
+
+    .fonetic .audio-button{
+        margin: 0 0 .1rem 1.5rem;
+    }
+
+    #fieldWord{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+
+    .footer{
+        width: 100%;
+        border-radius: 1px 1px 0 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #525050;
+        height: 5.5vh;
+    }
+
+    footer{
+        background: -webkit-linear-gradient(to left, #6a6868, #E6DADA);
+        background: linear-gradient(to left, #6a6868, #E6DADA);
+    }
+}
 
