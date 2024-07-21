@@ -2,55 +2,8 @@
 *.log
 
 # Ignorar directorio de node_modules
-node_modules/
+.app.js
+.favoriteWords.js
 
 # Ignorar archivos de entorno
 .env
-
-
-
-// const boton = document.getElementById('boton');
-
-// boton.addEventListener('click', function(event) {
-//     event.preventDefault();
-
-//     // Captura el valor del input
-//     const word = document.getElementById('word').value;
-//     console.log(word);
-
-
-
-// });
-
-
-// const text = document.querySelector('h1');
-// console.log(text);
-
-
-
-// const other = document.createElement('p');
-
-// other.innerHTML = "este es un nuevo nodo dentro del header";
-// document.querySelector('header').appendChild(other);
-
-// document.querySelector('header').removeChild(other);
-
-// const element = document.querySelector('a');
-// console.log(element);
-
-// const ver = element.getAttribute('href');
-
-// console.log(ver);
-
-
-// text.addEventListener('click', () => {
-//     text.innerHTML = `Hola Palomo`
-// })
-
-
-// text.addEventListener('mouseover', function() {
-// this.style.backgroundColor = 'blue';
-// });
-// text.addEventListener('mouseout', function() {
-// this.style.backgroundColor = 'red';
-// })

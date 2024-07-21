@@ -4,25 +4,17 @@
         height: 100vh;
         width:100%;
         margin: auto;
-    }
-
-    #home{
-        height:100vh;
         background: #e4cd05;
         background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
         background: linear-gradient(to right, #ffffff, #e4cd05);
+        overflow: hidden;
     }
 
     .header{
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding: 1rem;
-    }
-
-    #info{
-        color: #e4cd05;
-        font-weight: bold;
+        padding: 1rem 1rem 0 1rem;
     }
 
     #mainMenu{
@@ -34,6 +26,11 @@
         margin: auto;
     }
 
+    #mainMenu img{
+        margin: 8% auto 1rem auto;
+        width: 80%;
+    }
+
     .mainText{
         display: flex;
         flex-direction: column;
@@ -42,16 +39,17 @@
         margin: .5rem 0 0 2%;
         padding: 2.5rem;
         color: #3d3b53;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .keyWords{
         font-size: 1.8rem;
         font-style: italic;
         font-family: Montserrat, sans-serif;
-        /* writing-mode: vertical-rl;
-        box-orient: vertical;
-        direction: ltr;
-        transform: rotate(180deg); */
         font-size:1.8rem;
         font-weight: bold;
         -webkit-text-stroke: .8px #3d3b53;
@@ -62,21 +60,6 @@
         width: 60%;
         margin: 8% auto .3rem auto;
         font-size: 1.2rem;
-    }
-
-    .mainText{
-        color: #404348;
-        font-family: "Roboto", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        font-size: 1.5rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    #mainMenu img{
-        margin: 8% auto 1rem auto;
-        width: 80%;
     }
 
     /*STYLE OF MAIN SECTION */
@@ -91,13 +74,18 @@
     overflow: auto;
 }
 
+#info{
+    color: #e4cd05;
+    font-weight: bold;
+}
+
 .details {
     height: 80vh;
-    top: 3.5rem;
+    top: 4rem;
     left: 2.5%;
     width: 95%;
-    font-size: .9rem;
-    padding: 2rem 2rem;
+    font-size: 1rem;
+    padding: 2rem;
 }
 
 .appWord{
@@ -232,7 +220,6 @@ STYLE OF FOOTER */
 .backHome{
     text-align: center;
     color: #d4b205;
-
 }
 
 .saveFavorite{
@@ -240,21 +227,12 @@ STYLE OF FOOTER */
     color: #d4b205;
 }
 
-
-
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1020px){
     header{
         max-width:100%;
         margin: auto;
-        background: #e4cd05;
-        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
-        background: linear-gradient(to right, #ffffff, #e4cd05);
-    }
-
-    #home{
         height:100vh;
         background: #e4cd05;
         background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
@@ -292,10 +270,6 @@ STYLE OF FOOTER */
         font-size: 1.8rem;
         font-style: italic;
         font-family: Montserrat, sans-serif;
-        /* writing-mode: vertical-rl;
-        box-orient: vertical;
-        direction: ltr;
-        transform: rotate(180deg); */
         font-size:1.8rem;
         font-weight: bold;
         -webkit-text-stroke: .8px #3d3b53;
@@ -331,6 +305,7 @@ STYLE OF FOOTER */
         display: flex;
         background-color: #3d3b53;
     }
+
     #mainContent{
         display: flex;
         justify-content:center;
@@ -447,18 +422,12 @@ STYLE OF FOOTER */
 
 @media only screen and (min-width: 1024px) and (max-width: 1380px) {
     header{
-        max-width:100%;
+        width:100%;
+        height:100vh;
         margin: auto;
         background: #c0ad03;
         background: -webkit-linear-gradient(to right, #ffffff, #c0ad03);
         background: linear-gradient(to right, #ffffff, #c0ad03);
-    }
-
-    #home{
-        height:100vh;
-        background: #e4cd05;
-        background: -webkit-linear-gradient(to right, #ffffff, #e4cd05);
-        background: linear-gradient(to right, #ffffff, #e4cd05);
     }
 
     .header{
@@ -493,10 +462,6 @@ STYLE OF FOOTER */
         font-size: 1.8rem;
         font-style: italic;
         font-family: Montserrat, sans-serif;
-        /* writing-mode: vertical-rl;
-        box-orient: vertical;
-        direction: ltr;
-        transform: rotate(180deg); */
         font-size:3.5rem;
         font-weight: bold;
         -webkit-text-stroke: 1.5px #3d3b53;
@@ -547,7 +512,6 @@ STYLE OF FOOTER */
         padding: 2rem 2rem 0 2rem;
         line-height: 3rem;
     }
-
 
     .appWord{
         padding: .2rem;
