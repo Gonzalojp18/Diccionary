@@ -25,7 +25,6 @@
         font-weight: bold;
     }
 
-
     #mainMenu{
         display: flex;
         flex-direction: column-reverse;
@@ -101,11 +100,10 @@
     padding: 2rem 2rem;
 }
 
-
 .appWord{
     padding: .1rem;
     margin: 0 0 0 .7rem;
-    min-height: 80vh;
+    height: 82vh;
     color: #e4e4e6;
     font-family: "Roboto", sans-serif;
     line-height: normal;
