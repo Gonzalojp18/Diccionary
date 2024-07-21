@@ -5,6 +5,11 @@ html * {
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: #e4e4e6;
+}
+
 body{
     background-color: #ebe4e4;
 }
@@ -17,11 +22,68 @@ button{
     cursor: pointer;
 }
 
+#mainContent{
+    overflow-y: hidden;
+}
+
+.details {
+    position: absolute;
+    border-radius: 1rem;
+    z-index: 999;
+    clip-path: circle(0% at 100% 0%);
+    background-color: #a89704;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    border-radius: 1rem;
+    line-height: 35px;
+}
+
+#notification{
+    position: absolute;
+    background-color: rgba(212, 178, 5, 80%);
+    padding: .5rem;
+}
+
+.details.active {
+    clip-path: circle(100% at 5% 90%);
+    opacity: 1; /* hacer visible el elemento al activar */
+}
+
+@media all and (min-width: 320px) and (max-width: 760px) {
+    .details.active {
+        clip-path: circle(150% at 100% 100%);
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1020px) {
+    .details.active {
+        clip-path: circle(70% at 0% 30%);
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1379px) {
+    .details.active {
+        clip-path: circle(200% at 100% 100%);
+    }
+}
+
+@media all and (min-width: 1380px) and (max-width: 1950px) {
+    .details.active {
+        clip-path: circle(200% at 100% 100%);
+    }
+}
+
+
+
+
 /*STYLE OF HEADER SECTION */
 
 
 /*STYLE OF MAIN SECTION */
-
 
 
 

@@ -1,6 +1,9 @@
 const cardWord = document.getElementById('cardWords');
 let wordInput = document.getElementById('word');
-const notification = document.getElementById('notification');
+const notification = document.getElementById('notification');7
+
+
+
 
 // Here get and capture information since my API
 const fetchWordFromAPI = async (word) => {
