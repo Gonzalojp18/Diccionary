@@ -11,8 +11,8 @@
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(-10px);
-              transform: translateY(-10px);
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
     }
   }
   @keyframes slide-top {
@@ -21,8 +21,8 @@
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(-10px);
-              transform: translateY(-10px);
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
     }
   }
 

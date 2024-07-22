@@ -24,11 +24,13 @@
         width: 100%;
         padding: .5rem auto 0 auto;
         margin: auto;
+        overflow: hidden;
     }
 
     #mainMenu img{
         margin: 8% auto 1rem auto;
         width: 80%;
+        overflow: hidden;
     }
 
     .mainText{
@@ -71,7 +73,6 @@
     margin: auto;
     width: 100%;
     background-color: #3d3b53;
-    overflow: auto;
 }
 
 #info{
