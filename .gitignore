@@ -2,8 +2,18 @@
 *.log
 
 # Ignorar directorio de node_modules
+<<<<<<< HEAD
+=======
+/app.js
+/favoriteWords.js
+>>>>>>> siriusBack
 .app.js
 .favoriteWords.js
 
 # Ignorar archivos de entorno
 .env
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> siriusBack
